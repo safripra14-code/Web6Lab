@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praktikum DOM dan Event</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="topbar">
+        <h1 id="judul">Latihan DOM</h1>
+        <p id="pesan">Belum ada tindakan.</p>
+    </header>
+
+    <main class="container">
+
+        <!-- Latihan 1 -->
+        <section class="card">
+            <h2><span class="badge">1</span> Mengubah Teks dengan DOM</h2>
+            <p class="desc">Memilih elemen berdasarkan <code>id</code> lalu mengubah kontennya dengan <code>textContent</code>. Dijalankan saat halaman dimuat — lihat judul & pesan pada header.</p>
+            <button type="button" id="tombolL1">Jalankan Ulang</button>
+        </section>
+
+        <!-- Latihan 2 -->
+        <section class="card">
+            <h2><span class="badge">2</span> Event Click</h2>
+            <p class="desc">Saat tombol diklik, teks paragraf (header) berubah dan menampilkan waktu tindakan menggunakan <code>addEventListener("click", ...)</code>.</p>
+            <button type="button" id="tombolAksi">Klik Saya</button>
+        </section>
+
+        <!-- Latihan 3 -->
+        <section class="card">
+            <h2><span class="badge">3</span> Mengubah Kelas &amp; Gaya CSS</h2>
+            <p class="desc">Tombol menamb/menghapus kelas CSS dengan <code>classList.toggle()</code>.</p>
+            <p id="teksGaya">Paragraf ini berubah gaya saat tombol ditekan (highlight &amp; teks besar).</p>
+            <button type="button" id="tombolGaya">Ubah Gaya</button>
+        </section>
+
+        <!-- Latihan 4 -->
+        <section class="card">
+            <h2><span class="badge">4</span> Event Input &amp; Penghitung Karakter</h2>
+            <p class="desc">Jumlah karakter diperbarui saat pengguna mengetik (event <code>input</code>).</p>
+            <label for="namaInput">Nama:</label>
+            <input type="text" id="namaInput" maxlength="40" placeholder="Ketik nama Anda">
+            <p>Jumlah karakter: <span id="jumlahKarakter">0</span> / 40</p>
+        </section>
+
+        <!-- Latihan 5 -->
+        <section class="card">
+            <h2><span class="badge">5</span> Validasi Form Pendaftaran</h2>
+            <p class="desc">Memeriksa nama, email, dan usia. Pesan tampil sesuai kondisi input (<code>preventDefault()</code>).</p>
+            <form id="formPendaftaran" novalidate>
+                <div class="form-group">
+                    <label for="nama">Nama lengkap</label>
+                    <input id="nama" name="nama" type="text" placeholder="Nama lengkap">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" placeholder="nama@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="usia">Usia</label>
+                    <input id="usia" name="usia" type="number" min="17" max="100" placeholder="17 - 100">
+                </div>
+                <button type="submit">Daftar</button>
+            </form>
+            <p id="pesanForm" class="out" aria-live="polite"></p>
+        </section>
+
+        <!-- Latihan 6 -->
+        <section class="card">
+            <h2><span class="badge">6</span> Daftar Tugas (To-do List)</h2>
+            <p class="desc">Menambah tugas, menandai selesai, dan menghapus tugas (<code>createElement</code>, <code>append</code>, <code>classList</code>).</p>
+            <div class="form-row">
+                <input type="text" id="inputTugas" placeholder="Tugas baru">
+                <button type="button" id="tambahTugas">Tambah</button>
+            </div>
+            <p id="pesanTugas" class="out" aria-live="polite"></p>
+            <ul id="daftarTugas"></ul>
+        </section>
+
+        <!-- Mini Project -->
+        <section class="card project">
+            <h2><span class="badge">★</span> Mini Project — Form Pendaftaran Workshop</h2>
+            <p class="desc">Tiga+ fungsi interaktif: validasi (nama, email, sesi), penghitung karakter alasan, event change pada sesi, serta pesan sukses/gagal dan tombol reset.</p>
+            <form id="formWorkshop" novalidate>
+                <div class="form-group">
+                    <label for="wNama">Nama</label>
+                    <input id="wNama" type="text" placeholder="Minimal 3 karakter">
+                </div>
+                <div class="form-group">
+                    <label for="wEmail">Email</label>
+                    <input id="wEmail" type="email" placeholder="nama@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="wSesi">Pilih Sesi</label>
+                    <select id="wSesi">
+                        <option value="">-- Pilih Sesi --</option>
+                        <option value="Pagi (09.00–12.00)">Sesi Pagi (09.00–12.00)</option>
+                        <option value="Siang (13.00–16.00)">Sesi Siang (13.00–16.00)</option>
+                        <option value="Malam (19.00–21.00)">Sesi Malam (19.00–21.00)</option>
+                    </select>
+                    <p class="hint" id="infoSesi">Belum ada sesi dipilih.</p>
+                </div>
+                <div class="form-group">
+                    <label for="wAlasan">Alasan mengikuti</label>
+                    <textarea id="wAlasan" rows="3" maxlength="100" placeholder="Maks. 100 karakter"></textarea>
+                    <p class="hint">Karakter: <span id="wHitung">0</span> / 100</p>
+                </div>
+                <button type="submit">Daftar Workshop</button>
+                <button type="reset" id="wReset">Reset</button>
+            </form>
+            <p id="pesanWorkshop" class="out" aria-live="polite"></p>
+        </section>
+
+        <!-- Eksperimen E4 -->
+        <section class="card">
+            <h2><span class="badge">E4</span> Tombol Sembunyikan / Tampilkan Paragraf</h2>
+            <p class="desc">Menyembunyikan/menampilkan elemen dengan kelas CSS (<code>classList.toggle("hidden")</code>).</p>
+            <button type="button" id="tombolToggle">Sembunyikan / Tampilkan</button>
+            <p id="paragrafToggle">Paragraf ini dapat disembunyikan dan ditampilkan kembali memakai class CSS <code>.hidden</code>.</p>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 - Teknik Informatika, Universitas Pelita Bangsa</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,35 @@
+/* =====================================================
+   Tampilan halaman dibiarkan polos (default browser).
+   Hanya kelas fungsional yang dipertahankan agar hasil
+   tiap latihan tetap terlihat (Latihan 3, 6, dan E4).
+   ===================================================== */
+
+/* Latihan 3 — kelas gaya */
+.highlight {
+    color: #173f75;
+    background-color: #e6f1ff;
+    border-left: 4px solid #3478c8;
+    padding: 12px;
+}
+.teks-besar {
+    font-size: 1.4rem;
+}
+
+/* Latihan 6 — tugas selesai dicoret */
+.selesai span {
+    text-decoration: line-through;
+    color: #687386;
+}
+#daftarTugas li {
+    margin-bottom: 8px;
+}
+
+/* Eksperimen E4 — sembunyikan elemen */
+.hidden {
+    display: none;
+}
+
+/* sembunyikan paragraf pesan yang masih kosong */
+.out:empty {
+    display: none;
+}
