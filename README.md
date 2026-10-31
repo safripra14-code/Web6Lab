@@ -8,7 +8,7 @@
 |---|---|
 | Nama | Syafri Prayogo |
 | NIM | 312510500 |
-| Kelas | TI.25.C.13 |
+| Kelas | TI.25.C.3 |
 | Program Studi | Teknik Informatika |
 
 ---
